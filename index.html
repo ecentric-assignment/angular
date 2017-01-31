@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="assignApp">
+<head>
+	<meta charset="UTF-8">
+	<title>::: Assignment :::</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="assignCtrl">
+	<form name="form">
+		<table>
+			<thead>
+				<tr>
+					<th ng-show="shows.numOne">Number 1</th>
+					<th ng-show="shows.operator" class="operatorTitle">Operator</th>
+					<th ng-show="shows.numTwo">Number 2</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>		
+					<td ng-show="shows.numOne"><input type="text" name="iptNumOne" ng-model="numOne" required check-numeric></td>
+					<td ng-show="shows.operator">
+						<input type="text" name="iptOperator" ng-model="numOperator" size="2" maxlength="2" required check-operator>
+												
+						<span ng-repeat="operator in operators">
+							<button type="button" ng-click="clickOperator(form.iptOperator, operator)" class="operator">{{operator}}</button>
+						</span>
+					</td>
+					<td ng-show="shows.numTwo"><input type="text" name="iptNumTwo" ng-model="numTwo" required check-numeric></td>
+				</tr>
+			</tbody>
+		</table>
+		<br/>
+		
+		<button
+			type="button" 
+			name="btnEqual" 
+			ng-click="calculate()" 
+			ng-show="shows.btnAnswer">Display the answer</button>
+		<br/>
+		<br/>
+		
+		<span class="answerTitle">Answer: </span><span class="answer">{{result}}</span>
+		
+	</form>
+
+	<!-- JavaScripts -->
+	<script type="text/javascript" src="js/components/angular/angular.min.js"></script>		<!-- AngularJS 1.6.1 -->
+	<script type="text/javascript" src="js/script.js"></script>								<!-- Script for the assignment -->
+</body>
+</html>

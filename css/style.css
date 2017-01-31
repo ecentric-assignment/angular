@@ -1,0 +1,28 @@
+.operator	{
+	border: thin;
+	border-style: solid;
+	background-color: buttonface;
+	font-size: 10pt;
+	text-align: center;
+	vertical-align: middle;
+}
+
+th	{
+	font-size: 10pt;
+	font-weight: bold;
+	width: 50px;
+}
+
+th.operatorTitle	{
+	width: 220px;
+}
+
+.answerTitle	{
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+.answer	{
+	font-size: 10pt;
+	color: blue;
+}
